@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <link href="css/custom.css" rel="stylesheet" type="text/css">
+        <script>
+            function validate() {
+
+                
+                    var jdesiggnation = document.getElementById('jdesiggnation').value;
+                    var jdescription = document.getElementById('jdescription').value;
+                    var city = document.getElementById('city').value;
+                    var jtype = document.getElementById('jtype').value;
+                    var salary = document.getElementById('salary').value;
+                    var salarytype = document.getElementById('salarytype').value;
+                    var elevel = document.getElementById('elevel').value;
+                    var ein = document.getElementById('ein').value;
+                    var etype = document.getElementById('etype').value;
+                    var addlanguage = document.getElementById('addlanguage').value;
+                    var jobemailid = document.getElementById('jobemailid').value;
+                    var jobcomno = document.getElementById('jobcomno').value;
+                    var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+                    var count = 0;
+
+                    document.getElementById('error_jdesiggnation').innerHTML = '';
+                    document.getElementById('error_jdescription').innerHTML = '';
+                    document.getElementById('error_city').innerHTML = '';
+                    document.getElementById('error_jtype').innerHTML = '';
+                    document.getElementById('error_salary').innerHTML = '';
+                    document.getElementById('error_salarytype').innerHTML = '';
+                    document.getElementById('error_elevel').innerHTML = '';
+                    document.getElementById('error_ein').innerHTML = '';
+                    document.getElementById('error_etype').innerHTML = '';
+                    document.getElementById('error_addlanguage').innerHTML = '';
+                    document.getElementById('error_jobemailid').innerHTML = '';
+                    document.getElementById('error_jobcomno').innerHTML = '';
+
+
+
+                    if (jdesiggnation == '' || jdesiggnation == null) {
+                        document.getElementById('error_jdesiggnation').innerHTML = 'Enter  Job Designation';
+                        document.getElementById('jdesiggnation').focus();
+                        count++;
+                    }
+
+
+                    if (jdescription == '' || jdescription == null) {
+                        document.getElementById('error_jdescription').innerHTML = 'Enter Job Description';
+                        document.getElementById('jdescription').focus();
+                        count++;
+                    }
+                    
+
+                    if (city == '' || city == null) {
+                        document.getElementById('error_city').innerHTML = 'Enter City Name';
+                        document.getElementById('city').focus();
+                        count++;
+                    }
+
+                    if (jtype! == 0) {
+                        document.getElementById('error_jtype').innerHTML = 'Select Job Type';
+                        document.getElementById('jtype').focus();
+                        count++;
+                    }
+
+                    if (salary == '' || salary == null) {
+                        document.getElementById('error_salary').innerHTML = 'Enter Approximate Salary';
+                        document.getElementById('salary').focus();
+                        count++;
+                    }
+
+                    if (salarytype!== 0) {
+                        document.getElementById('error_salarytype').innerHTML = 'Select Approximate Salary';
+                        document.getElementById('salarytype').focus();
+                        count++;
+                    }
+
+                    if (elevel!== 0) {
+                        document.getElementById('error_elevel').innerHTML = 'Select Education Level';
+                        document.getElementById('elevel').focus();
+                        count++;
+                    }
+
+                    if (ein == '' || ein == null) {
+                        document.getElementById('error_ein').innerHTML = 'Enter Experience IN';
+                        document.getElementById('ein').focus();
+                        count++;
+                    }
+
+                    if (etype == 0) {
+                        document.getElementById('error_etype').innerHTML = 'Select Experience year';
+                        document.getElementById('etype').focus();
+                        count++;
+                    }
+
+                    if (addlanguage == '' || addlanguage == null) {
+                        document.getElementById('error_addlanguage').innerHTML = 'enter additional languages';
+                        document.getElementById('addlanguage').focus();
+                        count++;
+                    }
+
+                   if (jobemailid == '' || jobemailid == null) {
+                        document.getElementById('error_jobemailid').innerHTML = 'enter  communication email id';
+                        document.getElementById('jobemailid').focus();
+                        count++;
+                    }
+
+                    
+                   else if (!regex.test(jobemailid.value)) {
+                           document.getElementById('error_jobemailid').innerHTML = 'enter correct communication email id';
+                           document.getElementById('jobemailid').focus();
+                           count++;
+                    }
+
+
+
+
+                    if (jobcomno == '' || jobcomno == null) {
+                        document.getElementById('error_jobcomno').innerHTML = 'enter job communication contact number';
+                        document.getElementById('jobcomno').focus();
+                        count++;
+                    }
+
+                     else if (jobcomno.length < 10 || jobcomno.length > 10) {
+                               document.getElementById('error_jobcomno').innerHTML = 'Phone Number should be of 10 Digits';
+                              document.getElementById('jobcomno').focus();
+                              count++;
+ 
+                    }
+
+
+                    if (count > 0) {
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+
+                
+            }
+
+
+
+
+
+        </script>
+
+
+
+    </head>
+    <body id="signup">
+
+        <div class="container-fluid overflow" id="signup" >
+
+
+            <div class="row ">
+        
+            <nav class="navbar-default navbar-fixed-top wall " role="navigation">
+            
+                <div class="container-fliud ">
+                
+                    <div class="navbar-header ">
+                    
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-taggle" >
+                        
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        
+                        </button>
+                        
+                        <a class="navbar-brand brand" href="index.html">Retalis</a>
+                    
+                    </div>
+
+                    <div class="navbar-collapse collapse navbar-right navbar-taggle">
+                    
+                        <ul class="nav navbar-nav ">
+                        
+                            <li class="navbar-item ">
+                               <a class="link-item navbar-hover" href="seeker-login.html">Job Seekers</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="navbar-item " id="last-link">
+                               <a class="link-item navbar-hover" href="employer-login.html">Retailers</a>
+                            </li>
+                            <li class="divider hide"></li>
+                            <li class="navbar-item hide" >
+                               <a class="link-item navbar-hover" href="list.html">Browse Jobs</a>
+                            </li>
+                            
+                        
+                        </ul>
+                    
+                    </div>
+                
+                </div>
+            
+            </nav>
+
+                <div class="section" id="post-job">
+
+                 <div class="container-fluid">
+
+               <div class="row">
+
+                   <div class="col-md-8 col-md-offset-2"></div>
+                
+                    <div class="col-md-4 col-md-offset-4 ">
+
+                        
+
+                        <h3 class="text-danger">Post a Job</h3>
+                    
+                        <form role="form" action="PHPPage.php" method="post" onsubmit="return validate();"> 
+
+                        
+                            <div class="form-group">
+                            
+                               <label for="jobtitle" class="sr-only" >Job designation<span class="red"> *</span></label>
+
+                                <input type="text" class="form-control"  placeholder="Job designation" id="jdesiggnation" name="jdesiggnation">
+                                <div id="error_jdesiggnation" style="color: red;"></div>
+                            
+                            </div>
+
+                            <div class="form-group">
+                            
+                               <label for="jobdescription" class="sr-only" >Job Description<span class="red"> *</span></label>
+
+                                <textarea class="form-control"   placeholder="Job Description
+
+(Describe the responsibilities of this job, required work experience, skills, or education.)" id="jdescription" name="jdescription"></textarea>
+                               <div id="error_jdescription" style="color: red;"></div>
+                                
+                            </div>
+
+                            <div class="form-group">
+                            
+                               <label for="location"  class="sr-only">City<span class="red"> *</span></label>
+
+                                <input type="text" class="form-control" placeholder="City" id="city" name="city">
+                                <div id="error_city" style="color: red;"></div>
+
+                            </div>
+
+                            <div class="form-group ">
+                            
+                               <label for="jobtype"  class="sr-only">Job-type<span class="red"> *</span></label>
+
+                                <select class="form-control " id="jtype" name="jtype">
+                                
+                                    <option selected="selected" disabled="disabled" class="grey" >job Type</option>
+
+                                    <option>Full-time</option>
+
+                                    <option>Part-time</option>
+                                
+                                </select>
+                               <div id="error_jtype" style="color: red;"></div>
+                            </div>
+
+                             <div class="form-group form-inline">
+
+                                 <div id="jobsalary">
+
+                                      <label for="Salary" class="sr-only">Salary</label>
+
+                                      <input type="text" id="salary" class="form-control pull-left" placeholder="Salary (Ex: 50000)" name="salary">
+                                      <div id="error_salary" style="color: red;"></div>
+
+                                </div>
+
+                                 <div>
+                            
+                                    <label for="salarytype"  class="sr-only">Salary Type<span class="red"> *</span></label>
+
+                                     <select class="form-control " id="salarytype" name="salarytype">
+                                
+                                        <option selected="selected" class="grey">Per Month</option>
+
+                                       
+
+                                        <option>Per Year</option>
+
+                                        
+                                     </select>
+                                     <div id="error_salarytype" style="color: red;"></div>
+
+
+                                   </div>
+                                 </div>
+
+
+                            
+                            <div class="form-group ">
+                            
+                               <label for="educationlevel"  class="sr-only">Education Level<span class="red"> *</span></label>
+
+                                <select class="form-control " id="elevel" name="elevel">
+                                
+                                    <option selected="selected" disabled="disabled" class="grey" >Education Level</option>
+
+                                    <option>High-school or equivalent</option>
+
+                                    <option>Diploma</option>
+
+                                    <option>Bachelor's</option>
+
+                                    <option>Master's</option>
+                                
+                                </select>
+                             <div id="error_elevel" style="color: red;"></div>
+                            </div>
+                             <div class="form-group form-inline">
+
+                                 <div id="experience">
+
+                                      <label for="jobexperience" class="sr-only">Experience</label>
+
+                                      <input type="text" id="ein" class="form-control pull-left" placeholder="Experience In" name="ein">
+                                     <div id="error_ein" style="color: red;"></div>
+
+                                </div>
+
+                                 <div>
+                            
+                                    <label for="experiencetime"  class="sr-only">Experience-time<span class="red"> *</span></label>
+
+                                     <select class="form-control " id="etype" name="etype">
+                                
+                                        <option selected="selected" class="grey">0</option>
+
+                                        <option>1 year</option>
+
+                                        <option>2 Year</option>
+
+                                        <option>3 Year</option>
+
+                                        <option>4 Year</option>
+
+                                        <option>5 Year</option>
+
+                                        <option>6 Year</option>
+
+                                        <option>7 Year</option>
+                                
+                                     </select>
+                                   <div id="error_etype" style="color: red;"></div>
+                                   </div>
+
+                                 
+
+                                 </div>
+
+                             <div class="form-group">
+                            
+                               <label for="additionallanguage" class="sr-only" >Additional Language<span class="red"> *</span></label>
+
+                                <input type="text" class="form-control"  placeholder="Additional Language" id="addlanguage" name="addlanguage">
+                                <div id="error_addlanguage" style="color: red;"></div>
+
+                            </div>
+
+                            <div class="form-group">
+                            
+                               <label for="comm-email"  class="sr-only">Comm-Email<span class="red"> *</span></label>
+
+                                <input type="text" class="form-control" placeholder="Job communication Email ID" id="jobemailid" name="jobemailid">
+                                <div id="error_jobemailid" style="color: red;"></div>
+                            </div>
+
+                            <div class="form-group">
+                            
+                               <label for="comm-contact"  class="sr-only">Comm-contact<span class="red"> *</span></label>
+
+                                <input type="text" class="form-control" placeholder="Job communication Contact No." id="jobcomno" name="jobcomno">
+                                <div id="error_jobcomno" style="color: red;"></div>
+                            </div>
+
+                            
+
+                            <button type="submit" class="btn btn-danger  " name="login_btn">Continue</button>
+
+                            <a class="link-item pull-right" href="#">  <u>Cancel</u></a>
+		           
+                        </form>
+
+                            </div>
+                    
+                    </div>
+
+                </div>
+                </div>
+               </div>   
+		
+	    </div>
+     </div>
+
+        <div class="row-fluid ">
+        <div class=" footer navbar-static-bottom text-center"  >
+            
+                    <h5 class="footer-color">© 2016 Retalis Limited <a href="#" class="color">Terms</a> & <a href="#" class="color">Privacy</a> </h5>
+
+            </div>  
+     </div>
+    </body>
+</html>
+
